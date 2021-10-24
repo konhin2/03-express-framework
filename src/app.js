@@ -1,6 +1,9 @@
-// Imports
+// Imports modules
 const express = require('express')
 const app = express()
+
+// Import Routes
+const usersRouter = require('./routes/users.routes')
 
 // Middlewares
 require('dotenv').config()
@@ -11,9 +14,9 @@ app.get('/', (req, res) => {
     res.send('Welcome')
 })
 
-app.get('/users', (req, res) => {
-    res.send('Show Users')
-})
+app.use('/users', usersRouter)
+
+
 
 // Server
 app.listen(port, () => {
