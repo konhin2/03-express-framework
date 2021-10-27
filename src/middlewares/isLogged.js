@@ -1,5 +1,5 @@
 exports.isLogged = (req, res, next) => {
-    const logged = false
+    const logged = true
     if (logged) {
         next()
     } else {
